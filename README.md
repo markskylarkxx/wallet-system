@@ -31,7 +31,7 @@ Base URL: /api/v1/wallet
 bash
 POST /users
 {
-    "email": "john@example.com"
+    "email": "mark@gmail.com"
 }
 2. Fund Account
 bash
@@ -53,7 +53,7 @@ bash
 # Create user
 curl -X POST http://localhost:9090/api/v1/wallet/users \
   -H "Content-Type: application/json" \
-  -d '{"email": "john@example.com"}'
+  -d '{"email": "mark@gmail.com"}'
 
 # Fund account  
 curl -X POST http://localhost:9090/api/v1/wallet/fund \
