@@ -30,8 +30,6 @@ public class WalletController {
         log.info("Received create user request for email: {}", user.getEmail());
 
         serviceCall.createUserAndAccount(user);
-
-        // Convert to DTO to avoid circular references
         UserResponseDTO responseDTO = new UserResponseDTO();
         responseDTO.setId(user.getId());
         responseDTO.setEmail(user.getEmail());
@@ -44,7 +42,6 @@ public class WalletController {
                     user.getAccount().getWalletBalance().getAmount() : null);
             responseDTO.setAccount(accountDTO);
         }
-
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(ApiResponse.success("User and account created successfully", responseDTO));
     }
